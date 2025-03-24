@@ -52,5 +52,29 @@ public class AmazonTest {
 
 
     }
+    @Test
+    void UISearch() {
+        // registration
+        Configuration.holdBrowserOpen = true;
+
+        Configuration.browserSize = "1900x1600";
+
+        open("https://www.amazon.com");
+        refresh();
+        refresh();
+        $("#twotabsearchtextbox").should(Condition.visible).setValue("Playstation 5").pressEnter();
+        $(".a-color-state a-text-bold").should(Condition.visible).shouldHave(text("Playstation 5"));
+        // $(".a-icon a-icon-checkbox").should(Condition.visible).click();
+
+      //  $("#createAccountSubmit").should(Condition.visible).click();
+       // $("#ap_customer_name").should(Condition.visible).setValue("Thomas Ember");
+    //    $("#ap_email").should(Condition.visible).setValue("1000Esx@gmail.com");
+     //   $("#ap_password").should(Condition.visible).setValue("23x1106Can!@");
+    //    $("#ap_password_check").should(Condition.visible).setValue("23x1106Can!@");
+     //   $("#continue").click();
+
+     //   twotabsearchtextbox
+
+    }
 }
 
