@@ -88,5 +88,18 @@ public class AmazonTest {
      //   twotabsearchtextbox
 
     }
+
+    @Test
+    void UIsearch() {
+        // search
+        Configuration.holdBrowserOpen = true;
+
+        Configuration.browserSize = "1900x1600";
+
+        open("https://www.amazon.com");
+        refresh();
+        refresh();
+        $("#twotabsearchtextbox").should(Condition.visible).setValue("iphone 11").pressEnter();
+    }
 }
 
